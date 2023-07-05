@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>信封</title>
+ 	<style>
+  	*{
+      	margin:0;
+        padding:0;
+     }
+   
+     #xf{
+       position:absolute;
+       top:260px;
+       left:40px;
+       width:310px;
+       height:200px;
+       background-color:#ffc17a;
+       transform:rotate(9deg);
+       border-radius:3px;
+       box-shadow:1px 1px 10px #000000;
+     }
+   
+     #xz{
+       background-color:white;
+       padding:10px;
+       width:85%;
+       height:80%;
+       margin:10px auto;
+       opacity:0;
+       transition:2s;
+     }
+   
+     #san{
+       position:absolute;
+       width:1px;
+       height:1px;
+       border-top:100px solid red;
+       border-left:155px solid transparent;
+       border-right:155px solid transparent;
+       border-bottom:100px solid transparent;
+       border-radius:6px;
+     }
+   
+     #san::after{
+       display:block;
+       position:absolute;
+       content:"";
+       top:-102px;
+       left:-155px;
+       width:1px;
+       height:1px;
+       border-top:100px solid #ffc37a;
+       border-left:155px solid transparent;
+       border-right:155px solid transparent;
+       border-bottom:100px solid transparent;
+       border-radius:6px;
+     }
+   
+     #span{
+       position:absolute;
+       top:80px;
+       left:136px;
+       font-size:30px;
+       animation:action 0.7s infinite;
+       text-shadow:2px -2px 5px #ff7f78;
+     }
+   
+     #p{
+       font-size:15px;
+       text-indent:2em;
+     }
+   
+     h1{
+       background: linear-gradient(to right,#3bbeff,#ef66ff);
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+       text-align:center;
+       font-size:60px;
+       margin-top:100px;
+       letter-spacing:5px;
+     }
+   
+     h6{
+       position:absolute;
+       top:600px;
+       right:20px;
+       font-size:16px;
+     }
+   
+   #foot{
+     background: linear-gradient(to right,#3bbeff,#ef66ff);
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+   }
+   
+     @keyframes action{
+       100%{
+         transform:scale(1.8);
+       }
+     }
+  	</style>
+  </head>
+  <body>
+  	<h1>一封信</h1>
+  	<div id="xf">
+   			<div id="san"></div>
+      			<span id="span">❤</span>
+   		<div id="xz">
+     		<p id="p"></p>
+     	</div>
+   </div>
+   		<h6>———— 来自 <span id="foot">陌生的澜</span> 的编写</h6>
+   
+   <script>
+   		let xf = document.getElementById("xf")
+     	let p = document.getElementById("p")
+      	let str = "世界上有一条很长很美的路，叫做梦想；还有一堵很高很硬的墙，叫做现实；翻越那堵墙，叫做坚持；推倒那堵墙，叫做突破；坚定不移的过程，叫做定力；不忘初心的努力，叫做信念。很多东西，先决条件很重要，但那不过是一个起点。更重要的，是后天的努力，它会带给你意想不到的收获！"
+     	xf.onclick = function (){
+          document.getElementById("xz").style.opacity = 0.8
+     	let i = 0
+      	let timer = setInterval(()=>{
+         	p.innerHTML += str[i]
+          	i++
+           	if(i==str.length){
+              clearInterval(timer)
+            }
+        },200)
+     }
+   </script>
+  </body>
+</html>
