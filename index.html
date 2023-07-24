@@ -69,7 +69,16 @@
      #p{
        font-size:15px;
        text-indent:2em;
-       padding: 30px 20px;
+       padding: 10px 5px;
+       background:linear-gradient(to left,#1b97ff,#ff6be0);
+      -webkit-background-clip:text;
+      color:transparent;
+      font-size:19px;
+     }
+   
+     #p::after {
+       content:"❤";
+       color:red;
      }
    
      h1{
@@ -100,6 +109,7 @@
          transform:scale(1.8);
        }
      }
+   
   	</style>
   </head>
   <body>
@@ -116,7 +126,7 @@
    <script>
    		let xf = document.getElementById("xf")
      	let p = document.getElementById("p")
-      	let str = "开始对你好 后来对你越来越不好的男孩是想和你谈恋爱 开始对你好 后来对你越来越好的男孩是想跟你结婚"
+      	let str = "我最爱的酥酥宝宝声音超级甜，长得也好好看，我真的好想对你做不纯洁的事，酥酥宝宝不会介意耗纸色色吧？嘿嘿~ 耗纸最爱你啦~"
      	xf.onclick = function (){
           document.getElementById("xz").style.opacity = 0.8
      	let i = 0
